@@ -1,0 +1,15 @@
+INSERT INTO `contenttext` (id, ref, text) VALUES
+(1, "NavMenu1", "Permanent collection"),
+(2, "NavMenu2", "Current exhibition"),
+(3, "NavSignup", "Sign Up"),
+(4, "NavLogin", "Log in"),
+(5, "NavProjectName", "Folklore SVG"),
+(6, "homeTitle", "The Folklore SVG museum"),
+(7, "homeSubtitle", "Subtitle"),
+(8, "homeWelcome", "Welcome"),
+(9, "homeH2-1", "Subtitle"),
+(10, "homeH2-1-Text", "Engaging text about the project"),
+(11, "homeH2-2", "Subtitle"),
+(12, "homeH2-2-Text", "Engaging text about the project"),
+(13, "FooterTitle", "The Folklore SVG museum"),
+(14, "FooterAboutUs", "About Us");
