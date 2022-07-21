@@ -1,0 +1,14 @@
+.footerContainer {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+
+  .footerContainer p {
+    background-color: var(--divBackgroundColorDark);
+    font-weight: bold;
+  }

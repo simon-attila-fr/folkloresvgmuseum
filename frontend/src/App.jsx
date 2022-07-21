@@ -1,12 +1,34 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+// eslint-disable-next-line import/no-unresolved
 import Home from "@pages/Home";
-
+import Permanent from "./components/PermanentExhibition";
+import Temporary from "./components/TemporaryCollection";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import MainContext from "./contexts/MainContext";
 import "./App.css";
 
 function App() {
+  const [initialContent, setInitialContent] = useState([]);
+
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <MainContext.Provider
+        value={{
+          initialContent,
+          setInitialContent,
+        }}
+      >
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/permanentexhibition" element={<Permanent />} />
+          <Route path="/temporarycollection" element={<Temporary />} />
+        </Routes>
+        <Footer />
+      </MainContext.Provider>
     </div>
   );
 }

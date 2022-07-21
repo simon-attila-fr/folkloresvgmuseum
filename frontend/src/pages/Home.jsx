@@ -1,36 +1,23 @@
-import Counter from "@components/Counter";
-import logo from "@assets/logo.svg";
+import { useEffect, useContext } from "react";
+import axios from "axios";
+import MainContext from "../contexts/MainContext";
 
 export default function Home() {
+  const { initialContent, setInitialContent } = useContext(MainContext);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/content/text").then((response) => {
+      setInitialContent(response.data);
+    });
+  }, []);
+
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    <div className="homeContainer">
+      {initialContent
+        .filter((e) => e.ref.includes("home"))
+        .map((e) => (
+          <p>{e.text}</p>
+        ))}
+    </div>
   );
 }

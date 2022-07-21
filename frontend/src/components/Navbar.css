@@ -1,0 +1,57 @@
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 20vh;
+    padding: 0.5rem;
+  }
+
+  .navbarContainer ul {
+    list-style-type: none;
+  }
+
+  .navbarContainer li {
+    display: flex;
+    align-items: center;
+    height: 24px;
+  }
+
+  .navbarTitle, .navbarMenus, .navbarButtons {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbarMenus a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0.5rem;
+    font-size: 0.9rem;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.8s ease-out forwards;
+  }
+
+  .navbarMenus a:hover {
+    color: var(--divBackgroundColorDark);
+  }
+
+  .navbarMenus img {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.8s 0.5s ease-out forwards;
+  }
+
+  .navbarMenus li:nth-of-type(1n + 2) img {
+    display: none;
+  }
+
+  
+@keyframes apparition {
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
