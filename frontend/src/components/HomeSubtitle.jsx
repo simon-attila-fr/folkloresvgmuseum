@@ -1,18 +1,19 @@
 import React, { useContext } from "react";
 import MainContext from "../contexts/MainContext";
 
-export default function NavTitle() {
+export default function HomeSubtitle() {
   const { initialContent } = useContext(MainContext);
 
   return (
-    <div className="navbarTitleContainer">
-      <div className="navbarTitleContainer">
+    <div className="textAreaSubtitle">
+      <h2>
+        {" "}
         {initialContent
-          .filter((e) => e.ref.includes("NavProjectName"))
+          .filter((e) => e.ref.includes("homeSubtitle"))
           .map((e) => (
             <h1 key={e.id}>{e.text}</h1>
           ))}
-      </div>
+      </h2>
     </div>
   );
 }

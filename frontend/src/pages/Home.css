@@ -1,0 +1,66 @@
+.titleArea,
+.textArea,
+.presentationArea,
+.dontForgetArea {
+  display: flex;
+}
+
+.imageArea,
+.textArea {
+  width: 50vw;
+  height: 80vh;
+}
+
+.imageArea {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.titleArea .imageArea img {
+  max-height: 90%;
+  position: relative;
+  right: 0;
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: apparition 0.8s ease-out forwards;
+}
+
+.textArea {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 10vw;
+}
+
+.textAreaInfo,
+.textAreaTitle,
+.textAreaSubtitle {
+  margin-bottom: 1rem;
+}
+
+.textAreaInfo p,
+.textAreaSubtitle,
+.textAreaCallToAction h2 {
+  margin-right: 1rem;
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(30px);
+  animation: apparition 0.8s 0.5s ease-out forwards;
+}
+
+.textAreaTitle h1 {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 3.5rem;
+  letter-spacing: -1px;
+}
+
+.textAreaTitle h1 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(30px);
+  animation: apparition 0.8s ease-out forwards;
+}

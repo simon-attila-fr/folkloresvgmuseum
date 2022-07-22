@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 // eslint-disable-next-line import/no-unresolved
 import Home from "@pages/Home";
-import Permanent from "./components/PermanentExhibition";
-import Temporary from "./components/TemporaryCollection";
+import Permanent from "./pages/PermanentExhibition";
+import Temporary from "./pages/TemporaryCollection";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MainContext from "./contexts/MainContext";
