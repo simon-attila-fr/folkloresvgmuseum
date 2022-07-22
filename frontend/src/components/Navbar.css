@@ -59,12 +59,20 @@
   background-color: transparent;
   border: solid 1px var(--divBackgroundColorDark);
   border-radius: 5px;
+  box-shadow: none;
   padding: 1rem;
   text-transform: uppercase;
   display: inline-block;
   opacity: 0;
   transform: translateY(-30px);
   animation: apparition 0.8s 0.5s ease-out forwards;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease-out, color 0.5s ease-in-out;
+}
+
+.navbarButtons button:hover {
+  box-shadow: 0 0 0 2px var(--divBackgroundColorDark);
+  color: var(--divBackgroundColorDark);
 }
 
 @keyframes apparition {

@@ -11,7 +11,7 @@ export default function HomeSubtitle() {
         {initialContent
           .filter((e) => e.ref.includes("homeSubtitle"))
           .map((e) => (
-            <h1 key={e.id}>{e.text}</h1>
+            <h2 key={e.id}>{e.text}</h2>
           ))}
       </h2>
     </div>
