@@ -7,7 +7,7 @@ import landingPageImage from "../assets/homeImage1.png";
 import "./Home.css";
 
 export default function Home() {
-  const { initialContent, setInitialContent } = useContext(MainContext);
+  const { setInitialContent } = useContext(MainContext);
 
   useEffect(() => {
     axios.get("http://localhost:5000/content/text").then((response) => {
@@ -29,11 +29,6 @@ export default function Home() {
           <HomeSubtitle />
         </div>
       </section>
-      {initialContent
-        .filter((e) => e.ref.includes("home"))
-        .map((e) => (
-          <p>{e.text}</p>
-        ))}
     </div>
   );
 }
