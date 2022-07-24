@@ -1,5 +1,6 @@
 const argon2 = require("argon2");
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
+// const Joi = require("joi");
 const models = require("../models");
 
 class UserController {
@@ -7,7 +8,7 @@ class UserController {
     const { pseudo, email, password } = req.body;
 
     if (!pseudo || !email || !password) {
-      res.status(400).send("Pseudo, email and password is obligatory.");
+      return res.status(400).send("Pseudo, email and password are obligatory.");
     }
 
     try {
@@ -21,17 +22,16 @@ class UserController {
           role,
         })
         .then(([result]) => {
-          res.status(201).send({ id: result.insertId, email, pseudo });
+          res.status(201).send({ id: result.insertId, email, pseudo, role });
         })
         .catch((err) => {
           console.error(err);
-          res.status(500).send({
-            error: err.message,
-          });
+          res.status(500).send({ error: err.message });
         });
     } catch (err) {
-      res.status(500).send("Erreur lors du chiffrement du mot de passe");
+      res.status(500).send("An error has been occured.");
     }
+    return null;
   };
 }
 
