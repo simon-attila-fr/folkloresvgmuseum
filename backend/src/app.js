@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
 const ContentRouter = require("./routes/ContentRouter");
+const AuthRouter = require("./routes/AuthRoutes");
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
 
 // API routes
 app.use("/content", ContentRouter);
+app.use(AuthRouter);
 
 // Redirect all requests to the REACT app
 const reactIndexFile = path.join(
