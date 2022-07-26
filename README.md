@@ -11,6 +11,7 @@ It's pre-configured with a set of tools which'll help students produce industry-
 - Clone this repo, enter it
 - Run command `npm run setup`
 - _NB: To launch the backend server, you'll need an environment file with database credentials. You'll find a template one in `backend/.env.sample`_
+- You can initialize your database local using the sql files in backend/data folder.
 
 ### Available Commands
 
